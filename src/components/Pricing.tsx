@@ -55,14 +55,14 @@ const Pricing: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="harga" className="py-20 lg:py-32 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <section ref={sectionRef} id="harga" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 cyber-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 animate-neon-pulse">
             Harga
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Pilih paket yang sesuai dengan kebutuhan sekolah Anda
           </p>
         </div>
@@ -72,13 +72,13 @@ const Pricing: React.FC = () => {
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-white rounded-2xl shadow-xl p-8 scroll-animate-scale ${cardsVisible ? 'animate' : ''} stagger-${index + 1} ${
-                plan.popular ? 'ring-2 ring-indigo-600 transform scale-105' : ''
+              className={`relative glass-morphism rounded-2xl shadow-xl p-8 scroll-animate-scale ${cardsVisible ? 'animate' : ''} stagger-${index + 1} card-hover ${
+                plan.popular ? 'neon-border transform scale-105 animate-glow' : 'border border-gray-700'
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1">
+                  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-1 animate-glow">
                     <Star className="w-4 h-4" />
                     <span>Paling Popular</span>
                   </div>
@@ -86,27 +86,27 @@ const Pricing: React.FC = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-white mb-4 cyber-text">{plan.name}</h3>
                 <div className="mb-2">
-                  <span className="text-4xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-4xl font-bold cyber-text">{plan.price}</span>
                 </div>
-                <p className="text-gray-600">{plan.period}</p>
+                <p className="text-gray-300">{plan.period}</p>
               </div>
 
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-3">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <Check className="w-5 h-5 text-cyan-400 flex-shrink-0 animate-glow" />
+                    <span className="text-gray-300">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+              <p className="text-sm text-gray-400 mb-6 leading-relaxed">
                 <strong>Info:</strong> {plan.info}
               </p>
 
-              <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-200 ${plan.buttonStyle}`}>
+              <button className={`w-full py-3 px-6 rounded-lg font-semibold btn-hover ${plan.buttonStyle} ${plan.popular ? 'neon-border' : ''}`}>
                 {plan.buttonText}
               </button>
             </div>
@@ -114,8 +114,8 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Additional Info */}
-        <div ref={infoRef} className={`text-center bg-white rounded-xl p-8 shadow-lg scroll-animate ${infoVisible ? 'animate' : ''}`}>
-          <p className="text-gray-700 font-medium">
+        <div ref={infoRef} className={`text-center glass-morphism rounded-xl p-8 shadow-lg scroll-animate ${infoVisible ? 'animate' : ''} neon-border`}>
+          <p className="text-gray-300 font-medium">
             Minimal jumlah siswa adalah 100. Jika kurang dari 100, maka billing tetap 100 siswa
           </p>
         </div>

@@ -49,14 +49,14 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="fitur" className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-indigo-50">
+    <section ref={sectionRef} id="fitur" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 tech-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 animate-neon-pulse">
             Fitur Unggulan
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             SchoolMantic menawarkan solusi lengkap untuk kebutuhan absensi di sekolah Anda
           </p>
         </div>
@@ -66,15 +66,15 @@ const Features: React.FC = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 group scroll-animate-scale ${gridVisible ? 'animate' : ''} stagger-${index + 1}`}
+              className={`glass-morphism p-8 rounded-2xl shadow-lg card-hover group scroll-animate-scale ${gridVisible ? 'animate' : ''} stagger-${index + 1} neon-border circuit-pattern`}
             >
-              <div className="text-indigo-600 mb-6 group-hover:scale-110 transition-transform duration-200">
+              <div className="text-cyan-400 mb-6 group-hover:scale-110 transition-transform duration-300 animate-glow">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-white mb-4 cyber-text">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -83,10 +83,11 @@ const Features: React.FC = () => {
 
         {/* Bottom Image */}
         <div ref={imageRef} className={`mt-16 flex justify-center scroll-animate ${imageVisible ? 'animate' : ''}`}>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-2xl blur-xl"></div>
           <img
             src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1000"
             alt="Modern school technology"
-            className="w-full max-w-4xl rounded-2xl shadow-xl"
+            className="relative w-full max-w-4xl rounded-2xl shadow-xl animate-hologram"
           />
         </div>
       </div>
