@@ -110,17 +110,6 @@ const Features: React.FC = () => {
             </div>
           ))}
         </div>
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-white mb-4 cyber-text">
-                {feature.title}
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
 
         {/* Bottom Image */}
         <div ref={imageRef} className={`mt-16 flex justify-center scroll-animate ${imageVisible ? 'animate' : ''}`}>
