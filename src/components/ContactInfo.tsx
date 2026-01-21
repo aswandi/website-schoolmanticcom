@@ -7,7 +7,6 @@ const ContactInfo: React.FC = () => {
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: leftContentRef, isVisible: leftContentVisible } = useScrollAnimation();
   const { ref: rightImageRef, isVisible: rightImageVisible } = useScrollAnimation();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 bg-gray-50">
@@ -38,9 +37,14 @@ const ContactInfo: React.FC = () => {
                     POLMANTIC MEDIA CITRA<br />
                     Jl. Flamboyan No 28 Duta Kranji - Bekasi Kota
                   </p>
-                  <button className="text-indigo-600 hover:underline mt-2">
+                  <a 
+                    href="https://maps.app.goo.gl/Hojb5vFWZkgTt1Gi9" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-indigo-600 hover:underline mt-2 inline-block"
+                  >
                     Lihat di Google Maps
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -50,7 +54,14 @@ const ContactInfo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">WhatsApp</h4>
-                  <p className="text-gray-600">0811945222</p>
+                  <a 
+                    href="https://wa.me/62811945222" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-green-600 hover:underline font-semibold"
+                  >
+                    0811945222
+                  </a>
                 </div>
               </div>
 
@@ -60,7 +71,12 @@ const ContactInfo: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-2">Email</h4>
-                  <p className="text-gray-600">info@schoolmantic.com</p>
+                  <a 
+                    href="mailto:info@schoolmantic.com"
+                    className="text-blue-600 hover:underline"
+                  >
+                    info@schoolmantic.com
+                  </a>
                 </div>
               </div>
 
@@ -92,24 +108,6 @@ const ContactInfo: React.FC = () => {
               <h4 className="text-2xl font-bold mb-2">Siap Membantu Anda</h4>
               <p>Tim profesional kami siap memberikan solusi terbaik</p>
             </div>
-          </div>
-        </div>
-
-        {/* CTA Section */}
-        <div ref={ctaRef} className={`mt-16 text-center bg-white rounded-2xl p-8 shadow-lg scroll-animate-scale ${ctaVisible ? 'animate' : ''}`}>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Mulai Transformasi Digital Sekolah Anda
-          </h3>
-          <p className="text-gray-600 mb-6">
-            Hubungi kami sekarang untuk konsultasi gratis dan demo sistem
-          </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-            <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
-              WhatsApp Sekarang
-            </button>
-            <button className="border-2 border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition-colors duration-200">
-              Kirim Email
-            </button>
           </div>
         </div>
       </div>

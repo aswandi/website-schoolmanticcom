@@ -1,0 +1,13 @@
+# robots.txt for SchoolMantic
+User-agent: *
+Allow: /
+Allow: /foto
+
+# Sitemaps
+Sitemap: https://schoolmantic.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/

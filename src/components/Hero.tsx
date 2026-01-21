@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               <span className="block text-white animate-neon-pulse">SCHOOLMANTIC</span>
               <span className="block text-3xl sm:text-4xl lg:text-5xl cyber-text mt-2">
-                Aplikasi Absensi Sekolah
+                Aplikasi Absensi Sekolah Otomatis WhatsApp
               </span>
             </h1>
             

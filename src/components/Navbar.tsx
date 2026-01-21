@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Smartphone } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -7,6 +8,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: 'BERANDA', href: '#beranda' },
@@ -16,13 +18,17 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     { name: 'DEMO & PANDUAN', href: '#demo' },
     { name: 'SOCIAL MEDIA', href: '#social' },
     { name: 'TANYA JAWAB', href: '#faq' },
-    { name: 'FOTO', href: '#foto' }
+    { name: 'FOTO', href: '/foto', isRoute: true }
   ];
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (href: string, isRoute?: boolean) => {
+    if (isRoute) {
+      navigate(href);
+    } else {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -34,21 +40,23 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="p-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg animate-glow">
-              <Smartphone className="w-6 h-6 text-white" />
-            </div>
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/logo-schoolmantic.jpg" 
+              alt="SchoolMantic Logo" 
+              className="h-10 w-10 lg:h-12 lg:w-12 rounded-lg object-cover"
+            />
             <span className="text-xl lg:text-2xl font-bold cyber-text">
               SCHOOLMANTIC
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => scrollToSection(item.href)}
+                onClick={() => scrollToSection(item.href, item.isRoute)}
                 className={`text-sm font-medium transition-all duration-300 hover:text-cyan-400 ${isScrolled ? 'text-white' : 'text-gray-300'} hover:glow`}
               >
                 {item.name}
@@ -72,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               {menuItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => scrollToSection(item.href)}
+                  onClick={() => scrollToSection(item.href, item.isRoute)}
                   className="block w-full text-left text-white hover:text-cyan-400 font-medium transition-colors duration-300"
                 >
                   {item.name}

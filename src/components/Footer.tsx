@@ -1,14 +1,30 @@
 import React from 'react';
-import { Smartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const menuItems = [
-    'Beranda', 'Fitur', 'Harga', 'Demo', 'Tanya Jawab', 'Hubungi Kami'
+    { name: 'Beranda', href: '#beranda' },
+    { name: 'Fitur', href: '#fitur' },
+    { name: 'Harga', href: '#harga' },
+    { name: 'Demo', href: '#demo' },
+    { name: 'Tanya Jawab', href: '#faq' },
+    { name: 'Hubungi Kami', href: '#contact' }
   ];
 
   const services = [
-    'Proposal di Slideshare', 'Blog Schoolmantic', 'Foto', 'Instagram', 'Facebook'
+    { name: 'Proposal di Slideshare', href: 'https://www.slideshare.net/slideshow/proposal-schoolmantic-absensi-sidikjari-notifikasi-whatsapp-2024/270050113', external: true },
+    { name: 'Blog Schoolmantic', href: 'https://blog.schoolmantic.id/', external: true },
+    { name: 'Foto', href: '/foto', external: false },
+    { name: 'Instagram', href: 'https://www.instagram.com/schoolmantic.pmc/', external: true },
+    { name: 'Facebook', href: 'https://www.facebook.com/polmantic', external: true }
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 text-white py-16 circuit-pattern">
@@ -16,12 +32,14 @@ const Footer: React.FC = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="p-2 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg animate-glow">
-                <Smartphone className="w-6 h-6 text-white" />
-              </div>
+            <Link to="/" className="flex items-center space-x-3 mb-6">
+              <img 
+                src="/logo-schoolmantic.jpg" 
+                alt="SchoolMantic Logo" 
+                className="h-12 w-12 rounded-lg object-cover"
+              />
               <span className="text-2xl font-bold cyber-text">SCHOOLMANTIC</span>
-            </div>
+            </Link>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
               Software absensi sidik jari siswa dengan notifikasi WhatsApp otomatis ke wali siswa.
             </p>
@@ -32,13 +50,13 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-6 cyber-text">Menu Cepat</h3>
             <div className="space-y-3">
               {menuItems.map((item, index) => (
-                <a
+                <button
                   key={index}
-                  href="#"
-                  className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  onClick={() => scrollToSection(item.href)}
+                  className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-left"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </button>
               ))}
             </div>
           </div>
@@ -48,29 +66,26 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-6 cyber-text">Layanan</h3>
             <div className="space-y-3">
               {services.map((service, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
-                >
-                  {service}
-                </a>
+                service.external ? (
+                  <a
+                    key={index}
+                    href={service.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  >
+                    {service.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={index}
+                    to={service.href}
+                    className="block text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                  >
+                    {service.name}
+                  </Link>
+                )
               ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Contact Info */}
-        <div className="border-t border-gray-800 pt-8 mt-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-bold mb-4 cyber-text">Kontak</h3>
-              <div className="space-y-2 text-gray-300">
-                <p>POLMANTIC MEDIA CITRA</p>
-                <p>Jl. Flamboyan No 28 Duta Kranji - Bekasi Kota</p>
-                <p>WhatsApp: <span className="text-cyan-400">0811945222</span></p>
-                <p>info@schoolmantic.com</p>
-              </div>
             </div>
           </div>
         </div>

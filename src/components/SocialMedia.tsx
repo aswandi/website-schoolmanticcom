@@ -1,12 +1,11 @@
-import React from 'react';
-import { Instagram, Facebook, Users } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Facebook } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const SocialMedia: React.FC = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation();
-  const { ref: communityRef, isVisible: communityVisible } = useScrollAnimation();
 
   return (
     <section ref={sectionRef} id="social" className="py-20 lg:py-32 bg-white">
@@ -32,9 +31,14 @@ const SocialMedia: React.FC = () => {
             <p className="text-gray-600 mb-6 leading-relaxed">
               Follow Instagram kami untuk melihat update terbaru sistem absensi sekolah, demo aplikasi, dan implementasi di berbagai sekolah di Indonesia.
             </p>
-            <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
+            <a 
+              href="https://www.instagram.com/schoolmantic.pmc/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200"
+            >
               Follow Instagram
-            </button>
+            </a>
           </div>
 
           {/* Facebook */}
@@ -47,28 +51,14 @@ const SocialMedia: React.FC = () => {
             <p className="text-gray-600 mb-6 leading-relaxed">
               Kunjungi halaman Facebook kami untuk mendapatkan informasi lengkap tentang produk, layanan support, dan komunitas pengguna Schoolmantic.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
+            <a 
+              href="https://www.facebook.com/polmantic" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-200"
+            >
               Kunjungi Facebook
-            </button>
-          </div>
-        </div>
-
-        {/* Community Section */}
-        <div ref={communityRef} className={`bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 lg:p-12 text-center text-white scroll-animate-scale ${communityVisible ? 'animate' : ''}`}>
-          <Users className="w-16 h-16 mx-auto mb-6" />
-          <h3 className="text-3xl font-bold mb-4">
-            Bergabunglah dengan Komunitas Schoolmantic
-          </h3>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Dapatkan tips, update produk, dan berbagi pengalaman dengan pengguna lain
-          </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
-            <button className="bg-white text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
-              Follow Instagram
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-600 transition-colors duration-200">
-              Like Facebook
-            </button>
+            </a>
           </div>
         </div>
       </div>
