@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wifi, Settings, BarChart3 } from 'lucide-react';
+import { Wifi, Settings, BarChart3, FileText, ExternalLink } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Installation: React.FC = () => {
@@ -61,13 +61,40 @@ const Installation: React.FC = () => {
           ))}
         </div>
 
-        {/* Installation Image */}
+        {/* Proposal Link */}
         <div ref={imageRef} className={`text-center scroll-animate ${imageVisible ? 'animate' : ''}`}>
-          <img
-            src="https://images.pexels.com/photos/1181622/pexels-photo-1181622.jpeg?auto=compress&cs=tinysrgb&w=1000"
-            alt="Easy installation process"
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
-          />
+          <a 
+            href="https://www.slideshare.net/slideshow/proposal-schoolmantic-absensi-sidikjari-notifikasi-whatsapp-2024/270050113"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full max-w-4xl mx-auto group"
+          >
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl shadow-xl p-12 hover:shadow-2xl hover:border-indigo-400 transition-all duration-300 hover:scale-105">
+              <div className="flex flex-col items-center space-y-6">
+                <div className="w-24 h-24 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <FileText className="w-12 h-12" />
+                </div>
+                
+                <div className="text-center">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                    Proposal SchoolMantic
+                  </h3>
+                  <p className="text-lg text-gray-600 mb-4">
+                    Absensi Sidik Jari dengan Notifikasi WhatsApp
+                  </p>
+                  <div className="inline-flex items-center space-x-2 text-indigo-600 font-semibold group-hover:text-purple-600 transition-colors">
+                    <span>Lihat Proposal Lengkap</span>
+                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2 text-sm text-gray-500">
+                  <span className="px-4 py-2 bg-white rounded-full border border-gray-200">PDF Presentation</span>
+                  <span className="px-4 py-2 bg-white rounded-full border border-gray-200">SlideShare</span>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>

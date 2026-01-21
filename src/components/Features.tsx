@@ -116,7 +116,7 @@ const Features: React.FC = () => {
           <div className="relative w-full max-w-4xl">
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl animate-pulse"></div>
             <img
-              src="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1000"
+              src="/features-bottom.png"
               alt="Modern school technology"
               className="relative w-full rounded-2xl shadow-2xl border border-slate-700/50 hover:border-cyan-400/50 transition-all duration-500"
             />

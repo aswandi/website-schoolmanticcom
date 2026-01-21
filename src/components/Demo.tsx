@@ -51,8 +51,8 @@ const Demo: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <FileText className="w-6 h-6 text-indigo-600" />
                 <div>
-                  <div className="font-semibold text-gray-900">Panduan Setting ADMS:</div>
-                  <a href="#" className="text-indigo-600 hover:underline">Panduan Setting ADMS</a>
+                  <div className="font-semibold text-gray-900">Panduan Setting ADMS / Cloud Server:</div>
+                  <a href="https://www.youtube.com/watch?v=6psU6-W-WXE" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">Panduan Setting ADMS / Cloud Server</a>
                 </div>
               </div>
             </div>
@@ -63,9 +63,9 @@ const Demo: React.FC = () => {
               </p>
             </div>
 
-            <button className="w-full mt-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-200">
+            <a href="https://demo.schoolmantic.id" target="_blank" rel="noopener noreferrer" className="block w-full mt-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-200 text-center">
               Akses Demo Sekarang
-            </button>
+            </a>
           </div>
 
           {/* Right: Documentation */}
@@ -74,7 +74,7 @@ const Demo: React.FC = () => {
             
             <div className="mb-6">
               <img
-                src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=600"
+                src="/demo-whatsapp-api.png"
                 alt="Documentation and guides"
                 className="w-full rounded-lg shadow-lg"
               />
@@ -99,9 +99,9 @@ const Demo: React.FC = () => {
               </div>
             </div>
 
-            <button className="w-full mt-6 border-2 border-indigo-600 text-indigo-600 py-3 px-6 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition-colors duration-200">
+            <a href="https://www.slideshare.net/slideshow/tutorial-schoolmantic-aplikasi-absensi-otomatis-kirim-sms-dan-whatsapp/220834045" target="_blank" rel="noopener noreferrer" className="block w-full mt-6 border-2 border-indigo-600 text-indigo-600 py-3 px-6 rounded-lg font-semibold hover:bg-indigo-600 hover:text-white transition-colors duration-200 text-center">
               Panduan Schoolmantic (Google Drive)
-            </button>
+            </a>
           </div>
         </div>
       </div>

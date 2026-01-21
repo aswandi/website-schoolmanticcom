@@ -83,7 +83,7 @@ const ContactInfo: React.FC = () => {
           {/* Right: Contact Image */}
           <div ref={rightImageRef} className={`relative scroll-animate-right ${rightImageVisible ? 'animate' : ''}`}>
             <img
-              src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/contact-polmantic.jpg"
               alt="Contact us"
               className="w-full rounded-2xl shadow-xl"
             />

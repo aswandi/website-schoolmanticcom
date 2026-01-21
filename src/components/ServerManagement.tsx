@@ -64,11 +64,11 @@ const ServerManagement: React.FC = () => {
           </div>
 
           {/* Right Image */}
-          <div ref={imageRef} className={`relative scroll-animate-right ${imageVisible ? 'animate' : ''}`}>
+          <div ref={imageRef} className={`relative max-w-md mx-auto scroll-animate-right ${imageVisible ? 'animate' : ''}`}>
             <img
-              src="https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/server-whatsapp.jpeg"
               alt="Server management and cloud infrastructure"
-              className="w-full rounded-2xl shadow-2xl"
+              className="w-full h-auto rounded-2xl shadow-2xl object-cover"
             />
             <div className={`absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg scroll-animate-scale ${imageVisible ? 'animate' : ''} stagger-1`}>
               <div className="text-2xl font-bold text-green-600">24/7</div>

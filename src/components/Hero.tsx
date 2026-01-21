@@ -55,13 +55,15 @@ const Hero: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold btn-hover neon-border flex items-center justify-center group">
+              <a 
+                href="https://wa.me/62811945222?text=Halo%2C%20saya%20tertarik%20untuk%20mencoba%20gratis%201%20bulan%20SchoolMantic.%20Mohon%20informasi%20lebih%20lanjut."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold btn-hover neon-border flex items-center justify-center group"
+              >
                 Coba Gratis 1 Bulan
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="glass-morphism text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 border border-cyan-400/50">
-                Lihat Demo
-              </button>
+              </a>
             </div>
           </div>
 
@@ -69,12 +71,12 @@ const Hero: React.FC = () => {
           <div className={`transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
           }`}>
-            <div className="relative">
+            <div className="relative max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl animate-glow"></div>
               <img
-                src="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="/hero-whatsapp-absensi.jpg"
                 alt="Students using biometric attendance system"
-                className="relative w-full rounded-2xl shadow-2xl animate-hologram"
+                className="relative w-full h-auto rounded-2xl shadow-2xl animate-hologram object-cover"
               />
               <div className="absolute -bottom-6 -left-6 glass-morphism p-6 rounded-xl shadow-lg neon-border">
                 <div className="text-2xl font-bold cyber-text">99.9%</div>

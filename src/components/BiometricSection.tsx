@@ -70,7 +70,7 @@ const BiometricSection: React.FC = () => {
           <div ref={imageRef} className={`relative scroll-animate-right ${imageVisible ? 'animate' : ''}`}>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl animate-pulse"></div>
             <img
-              src="https://images.pexels.com/photos/8566473/pexels-photo-8566473.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/biometric-face.png"
               alt="Biometric face recognition system"
               className="relative w-full rounded-2xl shadow-2xl border border-slate-700/50"
             />

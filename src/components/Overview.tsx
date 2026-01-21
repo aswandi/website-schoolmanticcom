@@ -33,7 +33,7 @@ const Overview: React.FC = () => {
           <div ref={imageRef} className={`order-2 lg:order-1 scroll-animate-left ${imageVisible ? 'animate' : ''}`}>
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-2xl blur-xl animate-glow"></div>
             <img
-              src="https://images.pexels.com/photos/5212665/pexels-photo-5212665.jpeg?auto=compress&cs=tinysrgb&w=800"
+              src="/overview-absensi.jpg"
               alt="School attendance system dashboard"
               className="relative w-full rounded-2xl shadow-xl animate-hologram"
             />

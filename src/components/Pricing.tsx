@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, X } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const Pricing: React.FC = () => {
@@ -14,10 +14,10 @@ const Pricing: React.FC = () => {
       price: 'GRATIS',
       period: '1 bulan pertama',
       features: [
-        'absensi fingerprint/wajah',
-        'web laporan wali siswa',
-        'notifikasi whatsapp',
-        'app android wali siswa'
+        { text: 'absensi fingerprint/wajah', available: true },
+        { text: 'web laporan wali siswa', available: true },
+        { text: 'notifikasi whatsapp', available: true },
+        { text: 'app android wali siswa', available: false }
       ],
       info: 'Walau paket gratis, kami akan membantu sepenuhnya melalui whatsapp grup sampai mesin absensi terhubung ke sistem kami dan menghubungkan ke server whatsapp sampai berhasil terkirim ke wali siswa, setelah 1 bulan, sekolah dapat berhenti tanpa perlu memberikan alasan apapun',
       buttonText: 'Coba Gratis',
@@ -28,12 +28,26 @@ const Pricing: React.FC = () => {
       price: 'Rp 1.000,-',
       period: 'per siswa per bulan',
       features: [
-        'absensi fingerprint/wajah',
-        'web laporan wali siswa', 
-        'notifikasi whatsapp',
-        'app android wali siswa'
+        { text: 'absensi fingerprint/wajah', available: true },
+        { text: 'web laporan wali siswa', available: true }, 
+        { text: 'notifikasi whatsapp', available: false },
+        { text: 'app android wali siswa', available: false }
       ],
       info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 350.000 per bulan atau Rp 3.500.000 per tahun.',
+      buttonText: 'Pilih Paket',
+      buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700'
+    },
+    {
+      name: 'Standard',
+      price: 'Rp 2.000,-',
+      period: 'per siswa per bulan',
+      features: [
+        { text: 'absensi fingerprint/wajah', available: true },
+        { text: 'web laporan wali siswa', available: true }, 
+        { text: 'notifikasi whatsapp', available: false },
+        { text: 'app android wali siswa', available: true }
+      ],
+      info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 700.000 per bulan atau Rp 7.000.000 per tahun.',
       buttonText: 'Pilih Paket',
       buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700'
     },
@@ -43,10 +57,10 @@ const Pricing: React.FC = () => {
       period: 'per siswa per bulan',
       popular: true,
       features: [
-        'absensi fingerprint/wajah',
-        'web laporan wali siswa',
-        'notifikasi whatsapp', 
-        'app android wali siswa'
+        { text: 'absensi fingerprint/wajah', available: true },
+        { text: 'web laporan wali siswa', available: true },
+        { text: 'notifikasi whatsapp', available: true }, 
+        { text: 'app android wali siswa', available: true }
       ],
       info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 1.050.000 per bulan atau Rp 10.500.000 jika bayar sekaligus 1 tahun.',
       buttonText: 'Pilih Paket',
@@ -75,7 +89,7 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 mb-12">
+        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {plans.map((plan, index) => (
             <div 
               key={index}
@@ -105,10 +119,16 @@ const Pricing: React.FC = () => {
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="text-white">{feature}</span>
+                    {feature.available ? (
+                      <div className="w-6 h-6 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                    ) : (
+                      <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <X className="w-4 h-4 text-white" />
+                      </div>
+                    )}
+                    <span className={feature.available ? 'text-white' : 'text-gray-400 line-through'}>{feature.text}</span>
                   </div>
                 ))}
               </div>
@@ -117,9 +137,14 @@ const Pricing: React.FC = () => {
                 <strong>Info:</strong> {plan.info}
               </p>
 
-              <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:transform hover:translateY(-1px) hover:shadow-lg ${plan.buttonStyle}`}>
+              <a 
+                href={`https://wa.me/62811945222?text=${encodeURIComponent(`Halo, saya tertarik dengan paket ${plan.name} SchoolMantic. Mohon informasi lebih lanjut.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:transform hover:translateY(-1px) hover:shadow-lg text-center ${plan.buttonStyle}`}
+              >
                 {plan.buttonText}
-              </button>
+              </a>
             </div>
           ))}
         </div>
