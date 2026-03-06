@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import WhatsAppFloat from '../components/WhatsAppFloat';
 
 const GalleryPage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -154,6 +155,9 @@ const GalleryPage: React.FC = () => {
           />
         </div>
       )}
+
+      {/* WhatsApp Float Button */}
+      <WhatsAppFloat />
     </div>
   );
 };

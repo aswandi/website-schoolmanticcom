@@ -1,0 +1,78 @@
+========================================
+  WEBSITE SCHOOLMANTIC - SIAP UPLOAD!
+========================================
+
+FILE ZIP: schoolmantic-FINAL.zip
+LOKASI: C:\wwwroot\schoolmantic.com\website-schoolmanticcom\
+
+========================================
+UPDATE TERBARU:
+========================================
+✅ Histats tracking code (ID: 4411349)
+✅ 2 FAQ baru ditambahkan:
+   - Perangkat yang didukung
+   - Integrasi dengan aplikasi existing
+✅ Semua link berfungsi
+✅ SEO optimized
+✅ 16 foto galeri
+
+========================================
+CARA UPLOAD KE CPANEL:
+========================================
+
+1. LOGIN CPANEL
+   - Buka: https://yourdomain.com/cpanel
+   - Login dengan username & password
+
+2. FILE MANAGER
+   - Klik "File Manager"
+   - Masuk ke folder "public_html"
+
+3. UPLOAD & EXTRACT
+   - Upload file: schoolmantic-FINAL.zip
+   - Klik kanan → "Extract"
+   - Pindahkan semua file ke root public_html
+   - Hapus file ZIP
+
+4. VERIFY
+   - Buka: https://schoolmantic.com
+   - Test semua link dan tombol
+   - Test halaman /foto
+
+========================================
+CHECKLIST SETELAH UPLOAD:
+========================================
+☐ Website bisa diakses
+☐ Logo muncul
+☐ Semua gambar tampil
+☐ Halaman /foto berfungsi
+☐ Tombol WhatsApp berfungsi
+☐ Link footer berfungsi
+☐ Histats tracking aktif
+☐ SSL/HTTPS aktif
+
+========================================
+SEO SETUP (SETELAH ONLINE):
+========================================
+
+HARI 1-7:
+1. Google Search Console
+   - https://search.google.com/search-console
+   - Verify domain
+   - Submit sitemap: https://schoolmantic.com/sitemap.xml
+
+2. Google My Business
+   - https://business.google.com
+   - Daftar: Polmantic Media Citra
+   - Alamat: Jl. Flamboyan No 28, Bekasi
+   - Telepon: 0811945222
+
+========================================
+SUPPORT:
+========================================
+WhatsApp: 0811945222
+Email: info@schoolmantic.com
+
+========================================
+GOOD LUCK! 🚀
+========================================

@@ -30,9 +30,9 @@ const Installation: React.FC = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-32 bg-white">
+    <section ref={sectionRef as any} className="py-20 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
+        <div ref={headerRef as any} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
           <div className="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-full text-lg font-bold mb-6">
             TIDAK RIBET
           </div>
@@ -44,7 +44,7 @@ const Installation: React.FC = () => {
           </p>
         </div>
 
-        <div ref={stepsRef} className="grid md:grid-cols-3 gap-8 mb-16">
+        <div ref={stepsRef as any} className="grid md:grid-cols-3 gap-8 mb-16">
           {steps.map((step, index) => (
             <div key={index} className={`text-center scroll-animate-scale ${stepsVisible ? 'animate' : ''} stagger-${index + 1}`}>
               <div className="relative mb-8">
@@ -62,35 +62,47 @@ const Installation: React.FC = () => {
         </div>
 
         {/* Proposal Link */}
-        <div ref={imageRef} className={`text-center scroll-animate ${imageVisible ? 'animate' : ''}`}>
+        <div ref={imageRef as any} className={`scroll-animate ${imageVisible ? 'animate' : ''}`}>
           <a 
             href="https://www.slideshare.net/slideshow/proposal-schoolmantic-absensi-sidikjari-notifikasi-whatsapp-2024/270050113"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full max-w-4xl mx-auto group"
+            className="block w-full max-w-6xl mx-auto group"
           >
-            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl shadow-xl p-12 hover:shadow-2xl hover:border-indigo-400 transition-all duration-300 hover:scale-105">
-              <div className="flex flex-col items-center space-y-6">
-                <div className="w-24 h-24 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <FileText className="w-12 h-12" />
-                </div>
-                
-                <div className="text-center">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                    Proposal SchoolMantic
-                  </h3>
-                  <p className="text-lg text-gray-600 mb-4">
-                    Absensi Sidik Jari dengan Notifikasi WhatsApp
-                  </p>
-                  <div className="inline-flex items-center space-x-2 text-indigo-600 font-semibold group-hover:text-purple-600 transition-colors">
-                    <span>Lihat Proposal Lengkap</span>
-                    <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </div>
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl shadow-xl p-8 hover:shadow-2xl hover:border-indigo-400 transition-all duration-300">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Left: Image */}
+                <div className="relative overflow-hidden rounded-xl shadow-lg group-hover:shadow-2xl transition-shadow duration-300">
+                  <img 
+                    src="/proposal-schoolmantic.png" 
+                    alt="Proposal SchoolMantic - Aplikasi Absensi Sekolah Termurah"
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
 
-                <div className="flex items-center space-x-2 text-sm text-gray-500">
-                  <span className="px-4 py-2 bg-white rounded-full border border-gray-200">PDF Presentation</span>
-                  <span className="px-4 py-2 bg-white rounded-full border border-gray-200">SlideShare</span>
+                {/* Right: Content */}
+                <div className="flex flex-col items-start space-y-6">
+                  <div className="w-20 h-20 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <FileText className="w-10 h-10" />
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-indigo-600 transition-colors">
+                      Proposal SchoolMantic
+                    </h3>
+                    <p className="text-lg text-gray-600 mb-4">
+                      Absensi Sidik Jari dengan Notifikasi WhatsApp
+                    </p>
+                    <div className="inline-flex items-center space-x-2 text-indigo-600 font-semibold group-hover:text-purple-600 transition-colors">
+                      <span>Lihat Proposal Lengkap</span>
+                      <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-2 text-sm text-gray-500">
+                    <span className="px-4 py-2 bg-white rounded-full border border-gray-200">PDF Presentation</span>
+                    <span className="px-4 py-2 bg-white rounded-full border border-gray-200">SlideShare</span>
+                  </div>
                 </div>
               </div>
             </div>

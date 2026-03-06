@@ -20,8 +20,8 @@ const Pricing: React.FC = () => {
         { text: 'app android wali siswa', available: false }
       ],
       info: 'Walau paket gratis, kami akan membantu sepenuhnya melalui whatsapp grup sampai mesin absensi terhubung ke sistem kami dan menghubungkan ke server whatsapp sampai berhasil terkirim ke wali siswa, setelah 1 bulan, sekolah dapat berhenti tanpa perlu memberikan alasan apapun',
-      buttonText: 'Coba Gratis',
-      buttonStyle: 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+      buttonText: '🚀 Mulai Gratis Sekarang',
+      buttonStyle: 'bg-gradient-to-r from-green-500 to-green-600 text-white hover:shadow-green-500/50 hover:scale-105'
     },
     {
       name: 'Basic',
@@ -34,8 +34,8 @@ const Pricing: React.FC = () => {
         { text: 'app android wali siswa', available: false }
       ],
       info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 350.000 per bulan atau Rp 3.500.000 per tahun.',
-      buttonText: 'Pilih Paket',
-      buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700'
+      buttonText: '💬 Pesan Paket Ini',
+      buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700 hover:scale-105'
     },
     {
       name: 'Standard',
@@ -48,8 +48,8 @@ const Pricing: React.FC = () => {
         { text: 'app android wali siswa', available: true }
       ],
       info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 700.000 per bulan atau Rp 7.000.000 per tahun.',
-      buttonText: 'Pilih Paket',
-      buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700'
+      buttonText: '💬 Pesan Paket Ini',
+      buttonStyle: 'bg-indigo-600 text-white hover:bg-indigo-700 hover:scale-105'
     },
     {
       name: 'Premium',
@@ -63,13 +63,13 @@ const Pricing: React.FC = () => {
         { text: 'app android wali siswa', available: true }
       ],
       info: 'Misalnya jumlah siswa ada 350 maka sekolah membayar Rp 1.050.000 per bulan atau Rp 10.500.000 jika bayar sekaligus 1 tahun.',
-      buttonText: 'Pilih Paket',
-      buttonStyle: 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg'
+      buttonText: '⭐ Paket Terpopuler - Pesan Sekarang',
+      buttonStyle: 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:scale-105'
     }
   ];
 
   return (
-    <section ref={sectionRef} id="harga" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+    <section ref={sectionRef as any} id="harga" className="py-20 lg:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-20 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -79,7 +79,7 @@ const Pricing: React.FC = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div ref={headerRef} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
+        <div ref={headerRef as any} className={`text-center mb-16 scroll-animate ${headerVisible ? 'animate' : ''}`}>
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Harga
           </h2>
@@ -89,7 +89,7 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div ref={cardsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div ref={cardsRef as any} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {plans.map((plan, index) => (
             <div 
               key={index}
@@ -141,6 +141,11 @@ const Pricing: React.FC = () => {
                 href={`https://wa.me/62811945222?text=${encodeURIComponent(`Halo, saya tertarik dengan paket ${plan.name} SchoolMantic. Mohon informasi lebih lanjut.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== 'undefined' && (window as any).gtag_report_conversion) {
+                    (window as any).gtag_report_conversion(`https://wa.me/62811945222?text=${encodeURIComponent(`Halo, saya tertarik dengan paket ${plan.name} SchoolMantic. Mohon informasi lebih lanjut.`)}`);
+                  }
+                }}
                 className={`block w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 hover:transform hover:translateY(-1px) hover:shadow-lg text-center ${plan.buttonStyle}`}
               >
                 {plan.buttonText}
@@ -150,7 +155,7 @@ const Pricing: React.FC = () => {
         </div>
 
         {/* Additional Info */}
-        <div ref={infoRef} className={`text-center bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 shadow-lg scroll-animate ${infoVisible ? 'animate' : ''}`}>
+        <div ref={infoRef as any} className={`text-center bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-xl p-8 shadow-lg scroll-animate ${infoVisible ? 'animate' : ''}`}>
           <p className="text-white font-medium">
             Minimal jumlah siswa adalah 100. Jika kurang dari 100, maka billing tetap 100 siswa
           </p>

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, MessageSquare } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const FAQ: React.FC = () => {
   const { ref: sectionRef, isVisible } = useScrollAnimation();
   const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { ref: exampleRef, isVisible: exampleVisible } = useScrollAnimation();
   const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -42,6 +41,14 @@ const FAQ: React.FC = () => {
     {
       question: 'Apakah ada fitur nilai dan pembayaran?',
       answer: 'Saat ini, SchoolMantic hanya memiliki fitur absensi. Modul nilai dan sistem pembayaran siswa sedang dalam pengembangan.'
+    },
+    {
+      question: 'Perangkat apa saja yang didukung oleh aplikasi SchoolMantic?',
+      answer: 'Pada prinsipnya semua mesin yang ada fitur ADMS atau CLOUD SERVER bisa digunakan. Namun untuk pastinya bisa gunakan mesin yang pernah kami tes yaitu: Solution X100C, Solution X302-S, Bio-Finger AT-620, mesin absensi deteksi wajah Solution X609 (maksimal 200 wajah), BioFinger VL-320, Solution X902 (deteksi wajah), Falco (face recognition), Solution X105-ID.'
+    },
+    {
+      question: 'Apakah bisa diintegrasikan dengan aplikasi absensi yang sudah dijalankan di sekolah? Aplikasi kami belum ada fitur WhatsApp, jadi kami hanya ingin tambahkan fitur WhatsApp saja.',
+      answer: 'Bisa, kami menyediakan beberapa akun WhatsApp yang siap digunakan untuk sekolah. Jadi dalam hal ini akun WA dari kami dan kami menyediakan API untuk tujuan pengiriman WhatsApp yang bisa diintegrasikan dengan aplikasi internal pihak sekolah.'
     }
   ];
 
@@ -57,38 +64,6 @@ const FAQ: React.FC = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             Pertanyaan yang Sering Diajukan
           </h2>
-        </div>
-
-        {/* WhatsApp Notification Example */}
-        <div ref={exampleRef} className={`bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 mb-12 scroll-animate-scale ${exampleVisible ? 'animate' : ''}`}>
-          <div className="flex items-center mb-6">
-            <MessageSquare className="w-8 h-8 text-green-600 mr-4" />
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900">Contoh Notifikasi WhatsApp</h3>
-              <p className="text-gray-600">Tampilan WhatsApp Absensi Siswa</p>
-            </div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
-                S
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900">Sekolah ABC</div>
-                <div className="text-sm text-gray-500">Notifikasi Kehadiran</div>
-              </div>
-            </div>
-            <div className="bg-green-500 text-white p-4 rounded-lg">
-              <p>🎓 <strong>SCHOOLMANTIC</strong></p>
-              <p>📅 Selasa, 15 Januari 2025</p>
-              <p>👦 <strong>Ahmad Rizki</strong> (Kelas 10A)</p>
-              <p>✅ <strong>HADIR</strong> - 07:15 WIB</p>
-              <p>🏫 SMA Negeri 1 Jakarta</p>
-            </div>
-          </div>
-          <p className="text-gray-600 text-center mt-4">
-            Orang tua akan menerima notifikasi WhatsApp real-time ketika siswa datang atau pulang sekolah
-          </p>
         </div>
 
         {/* FAQ Items */}
